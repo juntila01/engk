@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/502646584c.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+html{
+   scroll-behavior: smooth;
+}
+body{
+   background: #080808;
+   color: #fff;
+}
+#header{
+   width: 100%;
+   height: 100vh;
+   background-image: url();
+   background-size: cover;
+   background-position: center;
+}
+.container{
+   padding: 10px 10%; 
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.logo{
+   width: 190px;
+}
+
+nav ul li{
+   display: inline-block;
+   list-style: none;
+   margin: 10px 20px;
+}
+
+nav ul li a{
+   color: #fff;
+   text-decoration: none;
+   font-size: 18px;
+   position: relative;
+}
+
+nav ul li a::after{
+   content: '';
+   width: 0;
+   height: 3px;
+   background: #00FFFF;
+   position: absolute;
+   left: 0;
+   bottom: -6px;
+   transition: 0.5s;
+}
+nav ul li a:hover::after{
+   width: 100%;
+}
+.header-text{
+   margin-top: 20%;
+   font-size: 30px;
+}
+.header-text h1{
+   font-size: 60px;
+   margin-top: 20px;
+}
+.header-text h1 span{
+   color: #00FFFF;
+}
+/* -----------about-------------- */
+#about{
+   padding: 80px 0;
+   color: #ababab;
+}
+.row{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.about-col-1{
+  flex-basis: 35%; 
+}
+.about-col-1 img{
+   width: 100%;
+   border-radius: 15px;
+}
+.about-col-2{
+   flex-basis: 60%;
+   
+}
+
+.sub-title{
+   font-size: 60px;
+   font-weight: 600;
+   color: #fff;
+   
+}
+
+.tab-titles{
+   display: flex;
+   margin: 20px 0 40px;
+}
+.tab-links{
+   margin-right: 50px;
+   font-size: 18px;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+}
+.tab-links::after{
+   content: '';
+   width: 0;
+   height: 3px;
+   background: #00FFFF;
+   position: absolute;
+   left: 0;
+   bottom: -8px;
+   transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+   width: 50%;
+}
+
+.tab-contents ul li{
+   list-style: none;
+   margin: 10px 0;
+}
+.tab-contents ul li span{
+   color: #00FFFF;
+   font-size: 14px;
+}
+.tab-contents{
+   display: none;
+}
+.tab-contents.active-tab{
+   display: block;
+}
+
+/* -----------services-------------- */
+#services{
+   padding: 30px 0;
+}
+.services-list{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-gap: 40px;
+   margin-top: 50px;
+}
+.services-list div{
+   background: #262626;
+   padding: 40px;
+   font-size: 13px;
+   font-weight: 300;
+   border-radius: 10px;
+   transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+   font-size: 50px;
+   margin-bottom: 30px;
+}
+.services-list div h2{
+   font-size: 30px;
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+.services-list div a{
+   text-decoration: none;
+   color: 12px;
+   font-size: 12px;
+   margin-top: 20px;
+   display: inline-block;
+}
+.services-list div:hover{
+   background: #00FFFF;
+   transform: translateY(-10px);
+}
+/* -----------portfolio-------------- */
+#portfolio{
+   padding: 50px 0;
+}
+.work-list{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-gap: 40px;
+   margin-top: 50px;
+}
+.work{
+   border-radius: 10px;
+   position: relative;
+   overflow: hidden;
+}
+.work img{
+   width: 100%;
+   border-radius: 10px;
+   display: block;
+   transition: transform 0.5s;
+}
+.layer{
+   width: 100%;
+   height: 0;
+   background: linear-gradient(rgba(0,0,0,0.6), #00FFFF);
+   border-radius: 10px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding: 0 40px;
+   text-align: center;
+   font-size: 14px;
+   transition: height 0.5s;
+}
+.layer h3{
+   font-weight: 500;
+   margin-bottom: 20px;
+}
+.layer a{
+   margin-top: 20px;
+   color: #00FFFF;
+   text-decoration: none;
+   font-size: 18px;
+   line-height: 60px;
+   background: #fff;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   text-align: center;
+}
+.work:hover img{
+   transform: scale(1.1);
+}
+.work:hover .layer{
+   height: 100%;
+}
+.btn{
+   display: block;
+   margin: 50px auto;
+   width: fit-content;
+   border: 1px solid #00FFFF;
+   padding: 14px 50px;
+   border-radius: 6px;
+   text-decoration: none;
+   color: #fff;
+   transition: background;
+}
+.btn:hover{
+   background: #00FFFF;
+}
+
+/*-----------contact-----------*/
+.contact-left{
+   flex-basis: 35%;
+}
+.contact-right{
+   flex-basis: 60%;
+}
+.contact-left p{
+   margin-top: 30px;
+}
+.contact-left p i{
+   color: #00FFFF;
+   margin-right: 15px;
+   font-size: 25px;
+}
+.social-icons{
+   margin-top: 30px;
+}
+.social-icons a{
+   text-decoration: none;
+   font-size: 30px;
+   margin-right: 15px;
+   color: #ababab;
+   display: inline-block;
+   transition: transform 0.5s;
+}
+.social-icons a:hover{
+   color: #00FFFF;
+   transform: translateY(-5px);
+}
+.btn.btn2{
+   display: inline-block;
+   background: #00FFFF;
+}
+.contact-right form{
+   width: 100%;
+}
+form input, form textarea{
+   width: 100%;
+   border: 0;
+   outline: none;
+   background: #262626;
+   padding: 15px;
+   margin: 15px 0;
+   color: #fff;
+   font-size: 18px;
+   border-radius: 6px;
+}
+form .btn2{
+   padding: 14px 60px;
+   font-size: 18px;
+   margin-top: 20px;
+   cursor: pointer;
+}
+.copyright{
+   width: 100%;
+   text-align: center;
+   padding: 25px 0;
+   background: #262626;
+   font-weight: 300;
+   margin-top: 20px;
+}
+.copyright i{
+   color: #00FFFF;
+}
+/* ------------css for small screen------------ */
+nav .fa-solid{
+   display: none;
+}
+
+@media only screen and (max-width: 600px){
+   #header{
+       background-image: url(images/Bg2.png);
+   }
+   .header-text{
+       margin-top: 100%;
+       font-size: 16px;
+   }
+   .header-text h1{
+       font-size: 30px;
+   }
+   nav .fa-solid{
+       display: block;
+       font-size: 25px;                 
+   }
+   nav ul{
+       background: #00FFFF;
+       position: fixed;
+       top: 0;
+       right: -200px;
+       width: 200px;
+       height: 100vh;
+       padding-top: 50px;
+       z-index: 2;
+       transition: right 0.5s;
+   }
+   nav ul li{
+       display: block;
+       margin: 25;
+   }
+   nav ul .fa-solid{
+       position: absolute;
+       top: 25px;
+       left: 25px;
+       cursor: pointer;
+   }
+   .sub-title{
+       font-size: 40px;
+   }
+   .about-col-1, .about-col-2{
+       flex-basis: 100%;
+   }
+   .about-col-1{
+       margin-bottom: 30px;
+   }    
+   .about-col-2{    
+       font-size: 14px;
+   }
+   .tab-links{
+       font-size: 16px;
+       margin-right: 20px
+   }
+   .contact-left, .contact-right{
+       flex-basis: 100%;
+   }
+   .copyright{
+       font-size: 14px;
+   }
+}
+#msg{
+   color: #61b752;
+   margin-top: -40px;
+   display: block;
+}
+.tet{
+    border-radius: 15px;
+}
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0q4LgHSt2XULDZFsVFVbe0czxEfnInu3NYmciuqTfx517lmdkoW7gfSZhF_x3oJXOP4A&usqp=CAU" class="logo tet">
+            <ul  id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <img style="padding-bottom: 50px;" src="engk.jpg" alt="pogi kong picture" class=" rounded img-fluid float-end GF" height="300px" width="250px">
+            <p>IT Student</p>
+            <h1>Hi, I'm <span>Romeo</span><br>Freshman From GRC</h1>
+        </div>
+    </div>
+</div>
+<!-- ---------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="ngek.jpeg.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About<span class="text-info">Me</span> </h1>
+                <p>I am an enthusiastic, self-motivated, reliable, responsible and hard working person.
+                 I am a mature team worker and adaptable to all challenging situations. I am able to work
+                 well both in a team environment as well as using own initiative. I am able to work well under pressure and adhere to strict deadlines.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Soft Skills</span><br>Communication,
+                            Creativity,
+                            Time Management,
+                            Technology,
+                            Color Theory,
+                            Problem Solving,
+                            Planning and Organization,
+                            Collaboration Skills,
+                            Research,
+                            Taking Criticism</li>
+                        <li><span>Hard Skills</span><br>Free Hand,
+                            Typography,
+                            Drawing,
+                            HTML/CSS,
+                            Graphic Design,
+                            Sketching</li>
+                        <li><span>Drawing</span><br>Traditional/Digital Drawing</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - Current</span><br>Simle Web Development, Photoshop</li>
+                        <li><span>2022 - 2022</span><br>Adobe Photoshop/Illustrator</li>
+                        <li><span>2020 - 2021</span><br>Labor/Construction</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Present</span><br>Information Technology - College</li>
+                        <li><span>2021-2023</span><br>Information Communication Technology - Senior High</li>
+                        <li><span>2016-2020</span><br>High School</li>
+                        <li><span>2010-2016</span><br>ELementary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------services---------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My <span class="text-info">Services</span></h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Graphic Design</h2>
+                <p>As a graphic designer, you're a visual storyteller, blending creativity with functionality to communicate messages, ideas, 
+                    and concepts through imagery and design elements. You have a keen eye for aesthetics, typography, and layout, balancing form and function 
+                    to create visually appealing and effective designs. Whether you're crafting a logo that encapsulates a brand's identity, designing a website that guides users 
+                    seamlessly through an experience, or conceptualizing eye-catching posters that captivate attention, your work is about more than just making things look good—it's about solving problems, connecting with audiences,
+                     and enhancing communication through the
+                     power of visual language. With your skills and imagination, 
+                    you shape the way people perceive and interact with the world around them, leaving a lasting impact through your designs.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                <h2>Art</h2>
+                <p>As an artist, you're a creator who breathes life into the intangible, transforming thoughts, emotions, and ideas into tangible forms 
+                    that resonate with others. You might work with various mediums like paint, clay, digital tools, or even performance art, each stroke or movement a deliberate 
+                    expression of your inner world. Your art is not just about aesthetics but about communication, sparking conversations, provoking thought, and evoking emotions. 
+                    Whether you're a painter capturing the essence of a moment, a sculptor molding raw material into shapes that speak volumes, 
+                    or a digital artist weaving pixels into immersive worlds, your work is a testament to the power of human creativity and imagination.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-pen-nib"></i>
+                <h2>Web Developer</h2>
+                <p>Good code is its own best documentation. As you're about to add a comment,
+                 ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.</p>
+                <a href="#">Learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--------------portfolio--------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My<span class="text-info">Work</span></h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="lezgo.png">
+                <div class="layer">
+                    <h3>Graphic Design</h3>
+                    <p>We Develop the Visuals for Your Business.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="roms.png">
+                <div class="layer">
+                    <h3>Web Design</h3>
+                    <p>A strategic approach to website design and development.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="eh.jpeg">
+                <div class="layer">
+                    <h3>Art</h3>
+                    <p>Discover the Impressive World of Art.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!-------------contact--------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact <span class="text-info">Me</span></h1>
+                <p><i class="fa-solid fa-paper-plane"></i>Juntila01@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> 09812068164</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jomaridas/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/jomaridass_"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/jomdas_/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="images/my-cv1.pdf" download class="btn btn2"><span class="text-dark">Download CV</span></a>
+            </div>
+            <div class="contact-right">
+               <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2"><span class="text-dark">Submit</span></button>
+               </form>
+               <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © The Copyright<i class="fa-solid fa-heart"></i> Act does not require that any symbols be used to indicate that works are subject to copyright</i></p>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }    
+
+</script>
+
+<script>
+    
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx1Cf1rFEsqcO-yVlaX-qoKLYtvh2YE360z9P10zqXp2AqdGnhN81xSmnDRQJb_EE4LlQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
